@@ -8,7 +8,6 @@ fetch ("http://localhost:3000/api/teddies")
         document.body.appendChild(tableauElements[tableauElements.length-1]);
 
         tableauElements.push(document.createElement("p"));
-        tableauElements.push(document.createElement("img"));
         tableauElements[tableauElements.length-1].onclick = () => console.log (hello);
         tableauElements[tableauElements.length-1].textContent = cur.name;
         tableauElements[tableauElements.length-2].appendChild(tableauElements[tableauElements.length-1]);
