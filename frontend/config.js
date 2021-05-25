@@ -1,8 +1,10 @@
 main()
 async function main(){
     const articles = await getTeddiesArticle()
-    console.log(articles)
-    displayArticles(articles)
+   for (let i = 0;i < articles.length; i++){
+       const article = articles[i];
+       displayArticle(articles)
+   }
 }
 //faire une fonction async permet d'utiliser await et donc return fetch//
  function getTeddiesArticle(){
@@ -21,6 +23,8 @@ async function main(){
         })
 }
 
-function displayArticles(){
-    return ""
+function displayArticles() {
+    document.getElementById("main").innerHTML += '
+    <div class="container" id="main"></div>'
+    
 }
