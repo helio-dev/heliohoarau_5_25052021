@@ -1,29 +1,35 @@
 main()
-async function main(){
-    const articles = await getTeddiesArticle()
-   for (article of articles){
-       const article = articles[i];
-       displayArticle(article)
+async function main() {
+    // variable qui permet de récuperer nos articles //
+    const articles = await getArticles()
+
+   for (article of articles){    
+       displayArticles(article)
    }
 }
 //faire une fonction async permet d'utiliser await et donc return fetch//
- function getTeddiesArticle(){
-    //fetch va chercher les articles //
-     return fetch("http://localhost:3000/api/teddies")
-    // fonction, a executer quand les données auront étés récupérées //
-        .then(function(httpBodyResponse){ //Un return dans un then se recupère dans le then suivant //
-          return httpBodyResponse.json()
-        })
-        .then(function(articles){
-            return articles
-        })
-        //Backup de gestion d'erreur au cas ou l'api soit down et que le fecth n'arrive pas à destination//
-        .catch(function(error){
-            alert(eror)
-        })
+function getArticles(){
+//fetch va chercher les articles //
+    return fetch("http://localhost:3000/api/teddies")
+// fonction, a executer quand les données auront étés récupérées //
+    .then(function(httpBodyResponse){ //Un return dans un then se recupère dans le then suivant //
+        return httpBodyResponse.json()
+    })
+    .then(function(articles){
+        return articles
+    })
+    //Backup de gestion d'erreur au cas ou l'api soit down et que le fecth n'arrive pas à destination//
+    .catch(function(error){
+        alert(error)
+    })
 }
 
 function displayArticles(article) {
-    document.getElementById("main").innerHTML += 
-    '<div class="container" id="main"></div>'    
+    const templateElt = document.getElementById("templateArticle")
+    const cloneElt = document.importNode(templateElt.content, true)
+
+    cloneElt.getElementById("produit__title").textContent = article.title
+    cloneElt.getElementById("produit__body").textContent = article.body
+
+    document.getElementById("main").appendChild(cloneElt)
 }

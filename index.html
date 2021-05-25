@@ -13,12 +13,19 @@
     <script src="frontend/produit.js" defer=""></script>
 </head>
 <body>
-    <main class="main">
+    <main class="main" id="main">
         <header>
             <img src="./frontend/images/logoOrinoco.png" alt="logo Orinoco">
         </header>
-        <div class="container" id="main">          
-        </div>
+        <template id="templateArticle">
+            <div class="container">
+                <article class="produit">
+                    <h2 id="produit__title" class="produit__title"></h2>
+                    <p id="produit__body" class="produit__body"></p>
+                </article>
+            
+            </div>
+        </template>
         <footer>
         </footer>
     </main>

@@ -2,3 +2,9 @@ body{
     text-decoration: none;
     background:linear-gradient(174deg, #a900d4, #d2822e);
 }
+
+#main{
+    width: 200px;
+    height: 200px;
+    background-color: black;
+}
