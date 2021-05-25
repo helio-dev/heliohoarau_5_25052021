@@ -23,7 +23,7 @@ async function main(){
         })
 }
 
-function displayArticles() {
+function displayArticles(article) {
     document.getElementById("main").innerHTML += 
     '<div class="container" id="main"></div>'    
 }
