@@ -1,4 +1,5 @@
-fetch ("http://localhost:3000/api/teddies")
+fetch("http://localhost:3000/api/teddies")
+        
 .then ((res)=>res.json()
 .then((resultat)=>{
 	let tableauElements = [];
